@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image";
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100vh;
+  min-height: 100vh;
   align-items: center;
   padding-top: 100px;
 
@@ -23,6 +23,19 @@ const Photo = styled.div`
   ${({ theme }) => theme.mixins.flexCenterCol};
   @media (max-width: 768px) {
     grid-row: 2/3;
+  }
+
+  img {
+    border-radius: 8px;
+    /* position: relative; */
+      /* border: 1px solid #fff; */
+
+    &::after {
+      /* height: 100%;
+      width: 100%; */
+      /* position: absolute; */
+      /* border: 1px solid green; */
+    }
   }
 `;
 

@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
     --content: 16px;
     --bigHeading: 32px;
     --sectionHeading: 24px; 
+    --border-radius: 8px;
     --nav-height: 100px;
     --nav-scroll-height: 70px;
     --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
