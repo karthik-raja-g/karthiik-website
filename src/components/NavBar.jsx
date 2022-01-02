@@ -55,9 +55,9 @@ const Nav = styled.nav`
   align-items: center;
   justify-content: space-between;
 
-  /* img {
-    width: 50px;
-  } */
+  img {
+    width: clamp(30px, 50px, 75px);
+  }
   aside {
     display: flex;
     align-items: center;
@@ -90,7 +90,7 @@ const NavBar = () => {
       scrolledToTop={scrolledToTop}
     >
       <Nav>
-        <StaticImage src="../images/icon.png" width={50}/>
+        <StaticImage src="../images/icon.png" width={50} layout="constrained" />
         <aside>
           <p>About</p>
           <p>Projects</p>

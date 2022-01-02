@@ -52,6 +52,8 @@ const skills = [
   },
 ];
 
+const SkillsSection = styled.section``;
+
 const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(140px, 300px));
@@ -75,13 +77,10 @@ const SkillBlock = styled.div`
   img {
     width: clamp(30px, 50px, 75px);
   }
-  p {
-    margin: 0;
-  }
 `;
 const Skills = () => {
   return (
-    <div>
+    <SkillsSection>
       <h3>Skills</h3>
       <p>
         Reprehenderit officia do amet labore fugiat labore.Qui deserunt tempor
@@ -95,7 +94,7 @@ const Skills = () => {
           </SkillBlock>
         ))}
       </StyledGrid>
-    </div>
+    </SkillsSection>
   );
 };
 

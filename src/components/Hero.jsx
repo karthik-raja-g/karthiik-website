@@ -11,11 +11,13 @@ const Wrapper = styled.div`
 
   @media (max-width: 1024px) {
     align-items: flex-start;
+    gap: 25px;
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+    gap: 0px;
   }
 `;
 
