@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   padding-top: 100px;
 
   @media (max-width: 1024px) {
-    align-items: flex-start;
+    align-items: center;
     gap: 25px;
   }
 

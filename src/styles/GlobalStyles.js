@@ -56,7 +56,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  p, h1,h2,h3,h4 {
+  p, h1,h2,h3,h4,li {
     color: ${({ theme }) => theme.text};
     margin: 0;
   }

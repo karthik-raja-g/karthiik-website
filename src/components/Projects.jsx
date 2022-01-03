@@ -17,6 +17,7 @@ const Box = styled.div`
   min-height: 20%;
   gap: 20px;
   border: 1px solid hotpink;
+  width: 100%;
 
   .project-thumb {
     max-width: 200px;
@@ -67,13 +68,12 @@ const Projects = () => {
     }
   `);
   const projects = data.projects.nodes;
-  console.log(data);
   return (
-    <ProjectsWrapper>
+    <ProjectsWrapper id="projects">
       <h3>Projects</h3>
       <p>
         At present not many, but still these are the projects that I have worked
-        on. Definitely more to come soon 💪
+        on. More to come soon 💪
       </p>
       <ProjectsList>
         {projects.map(({ frontmatter, html }, i) => {
