@@ -48,7 +48,7 @@ const Intro = styled.div`
 `;
 const Hero = () => {
   return (
-    <Wrapper>
+    <Wrapper id="about">
       <Photo>
         <StaticImage
           src="../images/profile.jpg"

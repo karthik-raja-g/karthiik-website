@@ -3,6 +3,10 @@ import styled, { css } from "styled-components";
 import useScrollDirection from "../hooks/useScrollDirection";
 import { useTheme } from "../context/ThemeContext";
 import { StaticImage } from "gatsby-plugin-image";
+import { navLinks } from "../config";
+import { Link } from "gatsby";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -58,7 +62,7 @@ const Nav = styled.nav`
   img {
     width: clamp(30px, 50px, 75px);
   }
-  aside {
+  ul {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -68,10 +72,16 @@ const Nav = styled.nav`
   }
 `;
 
+const ThemeSwitcher = styled.span`
+  cursor: pointer;
+  color: ${(props) => (props.isDarkTheme ? "yellow" : "black")};
+`;
+
 const NavBar = () => {
   const { themeName, toggleTheme } = useTheme();
   const scrollDirection = useScrollDirection("down");
   const [scrolledToTop, setScrolledToTop] = useState(true);
+  const isDarkTheme = themeName === "dark";
 
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset < 50);
@@ -91,11 +101,23 @@ const NavBar = () => {
     >
       <Nav>
         <StaticImage src="../images/icon.png" width={50} layout="constrained" />
-        <aside>
-          <p>About</p>
-          <p>Projects</p>
-          <p onClick={toggleTheme}>Theme: {themeName}</p>
-        </aside>
+        <ul>
+          {navLinks.map(({ name, url }, i) => (
+            <li key={i}>
+              <Link to={url}>{name}</Link>
+            </li>
+          ))}
+        </ul>
+        <ThemeSwitcher
+          isDarkTheme={isDarkTheme}
+          title={`Switch to ${isDarkTheme ? "Light" : "Dark"} theme`}
+        >
+          <FontAwesomeIcon
+            onClick={toggleTheme}
+            icon={!isDarkTheme ? faMoon : faSun}
+            className="theme-switch"
+          />
+        </ThemeSwitcher>
       </Nav>
     </StyledHeader>
   );

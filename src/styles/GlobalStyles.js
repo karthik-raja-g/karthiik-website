@@ -69,7 +69,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   footer {
-    padding: 25px 0;
+    padding: 25px 0 10px 0;
   }
 
   .brand-logo {
