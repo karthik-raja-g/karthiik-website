@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { useTheme } from "../context/ThemeContext";
 import GlobalStyle from "../styles/GlobalStyles";
+import Footer from "./Footer";
 
 import NavBar from "./NavBar";
 
@@ -24,6 +25,7 @@ const Layout = ({ children }) => {
       <FullContent>
         <NavBar />
         <MainContent className="mainContent">{children}</MainContent>
+        <Footer/>
       </FullContent>
     </ThemeProvider>
   );

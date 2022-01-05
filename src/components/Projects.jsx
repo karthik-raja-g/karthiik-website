@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import ExternalLink from "./ExternalLink";
 const ProjectsWrapper = styled.section``;
 const ProjectsList = styled.div`
   ${({ theme }) => theme.mixins.flexCenterCol};
@@ -80,13 +81,9 @@ const Projects = () => {
           const image = getImage(frontmatter.cover.childrenImageSharp[0]);
           return (
             <Box key={i}>
-              <a
-                href={frontmatter.external}
-                target="__blank"
-                className="image-link"
-              >
+              <ExternalLink href={frontmatter.external} className="image-link">
                 <GatsbyImage image={image} className="project-thumb" />
-              </a>
+              </ExternalLink>
               <Details>
                 <h4>{frontmatter.title}</h4>
                 <p dangerouslySetInnerHTML={{ __html: html }} />
@@ -97,16 +94,16 @@ const Projects = () => {
                     ))}
                   </ul>
                 )}
-                <div>
+                <div className="inline-links">
                   {frontmatter.external && (
-                    <a href={frontmatter.external} target="__blank">
-                      View
-                    </a>
+                    <ExternalLink href={frontmatter.external}>
+                      view
+                    </ExternalLink>
                   )}
                   {frontmatter.github && (
-                    <a href={frontmatter.github} target="__blank">
-                      <FontAwesomeIcon icon={faGithub} />
-                    </a>
+                    <ExternalLink href={frontmatter.github}>
+                      <FontAwesomeIcon icon={faGithub} className="brand-logo" />
+                    </ExternalLink>
                   )}
                 </div>
               </Details>

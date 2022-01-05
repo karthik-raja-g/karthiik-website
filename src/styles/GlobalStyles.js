@@ -67,6 +67,20 @@ const GlobalStyle = createGlobalStyle`
   .mediumHeading {
     font-size: clamp(40px, 8vw, 60px);
   }
+
+  footer {
+    padding: 25px 0;
+  }
+
+  .brand-logo {
+    font-size: 20px;
+  }
+
+  .inline-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
 `;
 
 export default GlobalStyle;
