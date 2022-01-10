@@ -88,7 +88,7 @@ const Projects = () => {
                 <h4>{frontmatter.title}</h4>
                 <p dangerouslySetInnerHTML={{ __html: html }} />
                 {frontmatter.tech && (
-                  <ul>
+                  <ul className="fancy-list">
                     {frontmatter.tech.map((tech) => (
                       <li>{tech}</li>
                     ))}

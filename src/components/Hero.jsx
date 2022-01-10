@@ -8,13 +8,14 @@ const Wrapper = styled.div`
   min-height: 100vh;
   align-items: center;
   padding-top: 100px;
+  justify-items: center;
 
   @media (max-width: 1024px) {
     align-items: center;
     gap: 25px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 425px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 0px;
@@ -24,26 +25,21 @@ const Wrapper = styled.div`
 
 const Photo = styled.div`
   ${({ theme }) => theme.mixins.flexCenterCol};
-  @media (max-width: 768px) {
+  max-width: 300px;
+
+  @media (max-width: 425px) {
+    margin: 50px auto 0;
+    width: 70%;
     grid-row: 2/3;
   }
 
   img {
     border-radius: 8px;
-    /* position: relative; */
-      /* border: 1px solid #fff; */
-
-    &::after {
-      /* height: 100%;
-      width: 100%; */
-      /* position: absolute; */
-      /* border: 1px solid green; */
-    }
   }
 `;
 
 const Intro = styled.div`
-  @media (max-width: 768px) {
+  @media (max-width: 425px) {
     grid-row: 1/2;
   }
 `;

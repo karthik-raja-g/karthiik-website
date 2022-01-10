@@ -23,32 +23,15 @@ const StyledHeader = styled.header`
   backdrop-filter: blur(10px);
   transition: all 0.5s;
 
+  ul {
+    list-style: none;
+  }
+
   @media (max-width: 1080px) {
     padding: 0 40px;
   }
   @media (max-width: 768px) {
     padding: 0 25px;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    ${(props) =>
-      props.scrollDirection === "up" &&
-      !props.scrolledToTop &&
-      css`
-        height: var(--nav-scroll-height);
-        transform: translateY(0px);
-        background-color: ${({ theme }) => theme.body};
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
-      `};
-
-    ${(props) =>
-      props.scrollDirection === "down" &&
-      !props.scrolledToTop &&
-      css`
-        height: var(--nav-scroll-height);
-        transform: translateY(calc(var(--nav-scroll-height) * -1));
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
-      `};
   }
 `;
 
@@ -129,8 +112,7 @@ const MobileMenu = styled.div`
 `;
 
 const Hamburger = styled(FontAwesomeIcon)`
-  color: ${({ theme }) => theme.body};
-  filter: invert();
+  color: ${({ theme }) => theme.highlight};
   display: none;
   @media (max-width: 425px) {
     display: block;
