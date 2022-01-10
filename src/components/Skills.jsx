@@ -67,9 +67,8 @@ const StyledGrid = styled.div`
 
 const SkillBlock = styled.div`
   ${({ theme }) => theme.mixins.flexCenterCol};
-  border: 1px solid hotpink;
   gap: 10px;
-  border: 1px solid hotpink;
+  /* border: 1px solid hotpink; */
   padding: 10px 0;
   border-radius: var(--border-radius);
   text-align: center;

@@ -18,6 +18,7 @@ const Wrapper = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 0px;
+    padding-top: 50px;
   }
 `;
 

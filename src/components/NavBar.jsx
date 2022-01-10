@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import useScrollDirection from "../hooks/useScrollDirection";
 import { useTheme } from "../context/ThemeContext";
 import { StaticImage } from "gatsby-plugin-image";
 import { navLinks } from "../config";
 import { Link } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faSun, faMoon, faBars } from "@fortawesome/free-solid-svg-icons";
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -58,9 +57,10 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* border-bottom: 1px solid white; */
 
   img {
-    width: clamp(30px, 50px, 75px);
+    width: clamp(30px, 35px, 75px);
   }
   ul {
     display: flex;
@@ -70,35 +70,79 @@ const Nav = styled.nav`
   p {
     margin: 5px 0;
   }
+
+  @media (max-width: 425px) {
+    ul {
+      display: none;
+    }
+  }
 `;
 
 const ThemeSwitcher = styled.span`
   cursor: pointer;
   color: ${(props) => (props.isDarkTheme ? "yellow" : "black")};
+  text-align: center;
+  @media (max-width: 425px) {
+    display: ${(props) => (props.open ? "block" : "none")};
+  }
 `;
 
+const MobileMenu = styled.div`
+  height: 0px;
+  transition: height 0.2s linear;
+  box-shadow: 0 25px 36px -20px var(--navy-shadow);
+  svg,
+  ul {
+    display: none;
+    opacity: 0;
+  }
+  @media (max-width: 425px) {
+    height: ${(props) => (props.open ? "150px" : "0")};
+    position: fixed;
+    width: 100%;
+    top: var(--nav-height);
+    background-color: ${({ theme }) => theme.body};
+
+    svg {
+      opacity: 1;
+      transition: opacity 0.2s linear;
+      display: inline-block;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      padding-top: 10px;
+      opacity: ${(props) => (props.open ? 1 : 0)};
+      transition: opacity 0.2s linear;
+
+      li {
+        /* border: 1px solid white; */
+      }
+    }
+  }
+`;
+
+const Hamburger = styled(FontAwesomeIcon)`
+  color: ${({ theme }) => theme.body};
+  filter: invert();
+  display: none;
+  @media (max-width: 425px) {
+    display: block;
+  }
+`;
 const NavBar = () => {
   const { themeName, toggleTheme } = useTheme();
-  const scrollDirection = useScrollDirection("down");
-  const [scrolledToTop, setScrolledToTop] = useState(true);
+  const [open, setOpen] = useState(false);
   const isDarkTheme = themeName === "dark";
 
-  const handleScroll = () => {
-    setScrolledToTop(window.pageYOffset < 50);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
-    <StyledHeader
-      scrollDirection={scrollDirection}
-      scrolledToTop={scrolledToTop}
-    >
+    <StyledHeader>
       <Nav>
         <StaticImage src="../images/icon.png" width={50} layout="constrained" />
         <ul>
@@ -118,7 +162,28 @@ const NavBar = () => {
             className="theme-switch"
           />
         </ThemeSwitcher>
+        <Hamburger icon={faBars} onClick={() => setOpen(!open)} />
       </Nav>
+      <MobileMenu open={open}>
+        <ThemeSwitcher
+          isDarkTheme={isDarkTheme}
+          title={`Switch to ${isDarkTheme ? "Light" : "Dark"} theme`}
+          open={open}
+        >
+          <FontAwesomeIcon
+            onClick={toggleTheme}
+            icon={!isDarkTheme ? faMoon : faSun}
+            className="theme-switch"
+          />
+        </ThemeSwitcher>
+        <ul>
+          {navLinks.map(({ name, url }, i) => (
+            <li key={i} onClick={() => setOpen(false)}>
+              <Link to={url}>{name}</Link>
+            </li>
+          ))}
+        </ul>
+      </MobileMenu>
     </StyledHeader>
   );
 };
