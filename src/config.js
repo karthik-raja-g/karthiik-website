@@ -30,4 +30,20 @@ module.exports = {
       url: "/#get-in-touch",
     },
   ],
+
+  translations: [
+    "Welcome",
+    "வணக்கம்",
+    "ഹലോ",
+    "ਸਤ ਸ੍ਰੀ ਅਕਾਲ",
+    "नमस्ते",
+    "ہیلو",
+    "Hola",
+    "Hallo",
+    "Bonjour",
+    "مرحبا",
+    "你好",
+    "こんにちは",
+    "Hallo",
+  ],
 };

@@ -38,9 +38,11 @@ const Footer = () => {
         <p className="heart">❤</p>
         <p>by Karthik using Gatsby</p>
       </FooterText>
-      <ExternalLink href="https://github.com/karthik-raja-g/karthiik-website">
-        <FontAwesomeIcon icon={faGithub} className="brand-logo" />
-      </ExternalLink>
+      <span className="inline-links">
+        <ExternalLink href="https://github.com/karthik-raja-g/karthiik-website">
+          <FontAwesomeIcon icon={faGithub} className="brand-logo" />
+        </ExternalLink>
+      </span>
     </AppFooter>
   );
 };

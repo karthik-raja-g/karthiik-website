@@ -80,7 +80,7 @@ const MobileMenu = styled.div`
     opacity: 0;
   }
   @media (max-width: 425px) {
-    height: ${(props) => (props.open ? "150px" : "0")};
+    height: ${(props) => (props.open ? "155px" : "0")};
     position: fixed;
     width: 100%;
     top: var(--nav-height);
@@ -123,6 +123,11 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
   const isDarkTheme = themeName === "dark";
 
+  const handleThemeToggle = () => {
+    setOpen(false);
+    toggleTheme();
+  }
+
   return (
     <StyledHeader>
       <Nav>
@@ -139,7 +144,7 @@ const NavBar = () => {
           title={`Switch to ${isDarkTheme ? "Light" : "Dark"} theme`}
         >
           <FontAwesomeIcon
-            onClick={toggleTheme}
+            onClick={handleThemeToggle}
             icon={!isDarkTheme ? faMoon : faSun}
             className="theme-switch"
           />
@@ -153,14 +158,14 @@ const NavBar = () => {
           open={open}
         >
           <FontAwesomeIcon
-            onClick={toggleTheme}
+            onClick={() => toggleTheme()}
             icon={!isDarkTheme ? faMoon : faSun}
             className="theme-switch"
           />
         </ThemeSwitcher>
         <ul>
           {navLinks.map(({ name, url }, i) => (
-            <li key={i} onClick={() => setOpen(false)}>
+            <li key={i} onClick={handleThemeToggle}>
               <Link to={url}>{name}</Link>
             </li>
           ))}

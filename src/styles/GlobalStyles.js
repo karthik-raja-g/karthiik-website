@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
   :root{
     --content: 16px;
     --bigHeading: 32px;
@@ -10,6 +11,14 @@ const GlobalStyle = createGlobalStyle`
     --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     --navy-shadow: rgba(2, 12, 27, 0.7);
     --green: #64ffda;
+    --fz-xxs: 12px;
+    --fz-xs: 13px;
+    --fz-sm: 14px;
+    --fz-md: 16px;
+    --fz-lg: 18px;
+    --fz-xl: 20px;
+    --fz-xxl: 22px;
+    --fz-heading: 32px;
   }
   html {
     box-sizing: border-box;
@@ -27,6 +36,13 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.body};
     margin: 0;
     overflow-x: hidden;
+    font-size: var(--fz-lg);
+    line-height: 1.7;
+    font-family: 'Inter', sans-serif;
+
+    @media (max-width: 480px) {
+      font-size: var(--fz-md);
+    }
   }
 
 .mainContent {
@@ -100,15 +116,18 @@ const GlobalStyle = createGlobalStyle`
         height: 100%;
       }
     }
+    &:visited {
+      color: ${({ theme }) => theme.link};
+    }
   }
 
   .brand-logo {
     font-size: 20px;
-    &:hover,
+    /* &:hover,
     &:focus,
     &:active {
       color: ${({ theme }) => theme.highlight};
-    }
+    } */
   }
 
   .inline-links {

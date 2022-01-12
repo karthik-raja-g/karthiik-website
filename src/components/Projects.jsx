@@ -21,7 +21,7 @@ const Box = styled.div`
   width: 100%;
 
   .project-thumb {
-    max-width: 200px;
+    width: 200px;
     height: 100%;
 
     @media (max-width: 425px) {
