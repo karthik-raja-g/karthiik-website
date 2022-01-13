@@ -80,8 +80,6 @@ const Projects = () => {
       }
     }
   `);
-  console.log(data)
-  // return null;
   const projects = data.projects.edges;
   return (
     <ProjectsWrapper id="projects">
@@ -96,7 +94,7 @@ const Projects = () => {
           return (
             <Box key={i}>
               <ExternalLink href={frontmatter.external} className="image-link">
-                <GatsbyImage image={image} className="project-thumb" />
+                <GatsbyImage image={image} className="project-thumb" alt={frontmatter.title} />
               </ExternalLink>
               <Details>
                 <h4>{frontmatter.title}</h4>
@@ -104,7 +102,7 @@ const Projects = () => {
                 {frontmatter.tech && (
                   <ul className="fancy-list">
                     {frontmatter.tech.map((tech) => (
-                      <li>{tech}</li>
+                      <li key={tech}>{tech}</li>
                     ))}
                   </ul>
                 )}

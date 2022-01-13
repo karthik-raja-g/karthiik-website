@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { useTheme } from "../context/ThemeContext";
 import { StaticImage } from "gatsby-plugin-image";
 import { navLinks } from "../config";
@@ -54,6 +54,9 @@ const Nav = styled.nav`
   }
 
   @media (max-width: 425px) {
+    img {
+      transform: scale(0.85) !important;
+    }
     ul {
       display: none;
     }
@@ -120,7 +123,7 @@ const NavBar = () => {
   return (
     <StyledHeader>
       <Nav>
-        <StaticImage src="../images/icon.png" width={50} layout="constrained" />
+        <StaticImage src="../images/icon.png" width={50} layout="constrained" alt="First letter K"/>
         <ul>
           {navLinks.map(({ name, url }, i) => (
             <li key={i}>
@@ -142,7 +145,7 @@ const NavBar = () => {
             {!isDarkTheme ? "🌒" : "🔅"}
           </span>
         </ThemeSwitcher>
-        <Hamburger icon={faBars} onClick={() => setOpen(!open)} />
+        <Hamburger icon={faBars} onClick={() => setOpen(!open)}/>
       </Nav>
       <MobileMenu open={open}>
         <ThemeSwitcher
