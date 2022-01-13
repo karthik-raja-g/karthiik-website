@@ -139,7 +139,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  /* ul {
+  ul {
     &.fancy-list {
       list-style: none;
       padding: 0;
@@ -157,7 +157,7 @@ const GlobalStyle = createGlobalStyle`
         }
       }
     }
-  } */
+  }
 `;
 
 export default GlobalStyle;

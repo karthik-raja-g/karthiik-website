@@ -59,26 +59,30 @@ const Projects = () => {
   const data = useStaticQuery(graphql`
     query {
       projects: allMarkdownRemark(
-        sort: { order: ASC, fields: frontmatter___date }
+        sort: { fields: frontmatter___date, order: ASC }
       ) {
-        nodes {
-          frontmatter {
-            cover {
-              childrenImageSharp {
-                gatsbyImageData(placeholder: BLURRED, width: 200, height: 200)
+        edges {
+          node {
+            frontmatter {
+              cover {
+                childrenImageSharp {
+                  gatsbyImageData(placeholder: BLURRED, width: 200, height: 200)
+                }
               }
+              external
+              github
+              tech
+              title
             }
-            external
-            github
-            tech
-            title
+            html
           }
-          html
         }
       }
     }
   `);
-  const projects = data.projects.nodes;
+  console.log(data)
+  // return null;
+  const projects = data.projects.edges;
   return (
     <ProjectsWrapper id="projects">
       <h3 className="mediumHeading">Projects</h3>
@@ -87,7 +91,7 @@ const Projects = () => {
         on. More to come soon 💪
       </p>
       <ProjectsList>
-        {projects.map(({ frontmatter, html }, i) => {
+        {projects.map(({ node: { frontmatter, html } }, i) => {
           const image = getImage(frontmatter.cover.childrenImageSharp[0]);
           return (
             <Box key={i}>
@@ -96,7 +100,7 @@ const Projects = () => {
               </ExternalLink>
               <Details>
                 <h4>{frontmatter.title}</h4>
-                <p dangerouslySetInnerHTML={{ __html: html }} />
+                <div dangerouslySetInnerHTML={{ __html: html }} />
                 {frontmatter.tech && (
                   <ul className="fancy-list">
                     {frontmatter.tech.map((tech) => (
