@@ -23,8 +23,8 @@ const Wrapper = styled.div`
   @media (max-width: 425px) {
     /* grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 0px;
-    padding-top: 50px; */
+    gap: 0px; */
+    padding-top: 50px;
     display: flex;
     flex-direction: column-reverse;
   }

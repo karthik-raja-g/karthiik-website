@@ -6,7 +6,8 @@ module.exports = {
     contact: "karthikajar555@gmail.com",
   },
   plugins: [
-    "gatsby-plugin-styled-components",
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

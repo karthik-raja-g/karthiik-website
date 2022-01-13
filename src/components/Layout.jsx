@@ -6,6 +6,7 @@ import GlobalStyle from "../styles/GlobalStyles";
 import Footer from "./Footer";
 
 import NavBar from "./NavBar";
+import SEO from "./SEO";
 
 const FullContent = styled.div`
   display: flex;
@@ -20,14 +21,17 @@ const MainContent = styled.main`
 const Layout = ({ children }) => {
   const { theme } = useTheme();
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <FullContent>
-        <NavBar />
-        <MainContent className="mainContent">{children}</MainContent>
-        <Footer/>
-      </FullContent>
-    </ThemeProvider>
+    <>
+      <SEO/>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <FullContent>
+          <NavBar />
+          <MainContent className="mainContent">{children}</MainContent>
+          <Footer />
+        </FullContent>
+      </ThemeProvider>
+    </>
   );
 };
 
