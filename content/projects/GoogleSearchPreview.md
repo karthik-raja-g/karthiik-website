@@ -1,7 +1,7 @@
 ---
 date: '1'
 title: 'Google search previewer '
-cover: './googlePreview.png'
+cover: './googlePreview.jpg'
 external: 'https://chrome.google.com/webstore/detail/search-result-previewer/hohiagapgmecaoofekehpolmngnfggnn'
 tech:
  - HTML

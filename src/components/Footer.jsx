@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import ExternalLink from "./ExternalLink";
+import DayGreeting from "./DayGreeting";
 
 const AppFooter = styled.footer`
   ${({ theme }) => theme.mixins.flexCenterCol};
@@ -33,6 +34,7 @@ const FooterText = styled.div`
 const Footer = () => {
   return (
     <AppFooter>
+      <DayGreeting/>
       <FooterText>
         <p>Made with</p>
         <p className="heart">❤</p>

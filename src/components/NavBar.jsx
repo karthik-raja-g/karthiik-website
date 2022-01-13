@@ -80,7 +80,7 @@ const MobileMenu = styled.div`
     opacity: 0;
   }
   @media (max-width: 425px) {
-    height: ${(props) => (props.open ? "155px" : "0")};
+    height: ${(props) => (props.open ? "200px" : "0")};
     position: fixed;
     width: 100%;
     top: var(--nav-height);

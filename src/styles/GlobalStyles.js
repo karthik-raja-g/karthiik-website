@@ -80,7 +80,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .bigHeading {
-    font-size: clamp(40px, 8vw, 80px);
+    font-size: clamp(40px, 6vw, 80px);
   }
   .mediumHeading {
     font-size: clamp(40px, 8vw, 60px);
@@ -123,11 +123,11 @@ const GlobalStyle = createGlobalStyle`
 
   .brand-logo {
     font-size: 20px;
-    /* &:hover,
+    &:hover,
     &:focus,
     &:active {
       color: ${({ theme }) => theme.highlight};
-    } */
+    }
   }
 
   .inline-links {

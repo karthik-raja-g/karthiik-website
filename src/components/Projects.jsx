@@ -7,12 +7,19 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import ExternalLink from "./ExternalLink";
 const ProjectsWrapper = styled.section``;
 const ProjectsList = styled.div`
-  ${({ theme }) => theme.mixins.flexCenterCol};
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 425px) {
+    grid-template-columns: 1fr;
+  }
 `;
 const Box = styled.div`
+  ${({ theme }) => theme.mixins.flexCenterCol};
   box-sizing: border-box;
-  display: flex;
   border-radius: var(--border-radius);
   padding: 15px;
   min-height: 20%;
@@ -21,7 +28,7 @@ const Box = styled.div`
   width: 100%;
 
   .project-thumb {
-    width: 200px;
+    width: 100%;
     height: 100%;
 
     @media (max-width: 425px) {
@@ -44,6 +51,8 @@ const Box = styled.div`
 
 const Details = styled.aside`
   flex-grow: 1;
+  ${({ theme }) => theme.mixins.flexExpandCol};
+  align-items: flex-start;
 `;
 const Projects = () => {
   const data = useStaticQuery(graphql`
@@ -55,7 +64,7 @@ const Projects = () => {
           frontmatter {
             cover {
               childrenImageSharp {
-                gatsbyImageData(placeholder: BLURRED, width: 300)
+                gatsbyImageData(placeholder: BLURRED, width: 200, height: 200)
               }
             }
             external
