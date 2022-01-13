@@ -5,14 +5,16 @@ import { getRandomInt, getDayInfo, getDayText } from "../utils";
 
 const GreetingText = styled.p`
   ${({ theme }) => theme.mixins.flexExpand};
-  width: 255px;
+  width: 270px;
   @media (max-width: 425px) {
-    width: 235px;
+    width: 240px;
   }
 `;
 const DayMessage = styled.span`
-  font-weight: 600;
   font-style: italic;
+  font-family: 'Russo One', sans-serif;
+  /* font-family: 'Bangers', cursive; */
+  /* letter-spacing: 2px; */
 `;
 const StaticText = styled.span`
   flex-shrink: 0;
@@ -41,7 +43,7 @@ const DayGreeting = () => {
   return (
     <GreetingText>
       <StaticText>Have a</StaticText>{" "}
-      <DayMessage>{message || "great"}</DayMessage>{" "}
+      <DayMessage>{message || "Great"}</DayMessage>{" "}
       <StaticText>{dayInfo?.dayName}</StaticText>
     </GreetingText>
   );

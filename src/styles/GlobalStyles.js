@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Russo+One&display=swap');
   :root{
     --content: 16px;
     --bigHeading: 32px;
@@ -70,7 +72,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     @media (max-width: 480px) {
-      padding: 60px 0;
+      padding: 50px 0;
     }
   }
 
@@ -83,7 +85,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: clamp(40px, 6vw, 80px);
   }
   .mediumHeading {
-    font-size: clamp(40px, 8vw, 60px);
+    font-size: clamp(20px,5vw,30px);
   }
 
   footer {
@@ -110,7 +112,7 @@ const GlobalStyle = createGlobalStyle`
       /* left: 2px; */
     }
     &:hover {
-      color: red;
+      color: ${({ theme }) => theme.linkHover} !important;
       &:before {
         z-index: -1;
         height: 100%;
@@ -123,11 +125,6 @@ const GlobalStyle = createGlobalStyle`
 
   .brand-logo {
     font-size: 20px;
-    &:hover,
-    &:focus,
-    &:active {
-      color: ${({ theme }) => theme.highlight};
-    }
   }
 
   .inline-links {
@@ -145,14 +142,18 @@ const GlobalStyle = createGlobalStyle`
   ul {
     &.fancy-list {
       list-style: none;
+      padding: 0;
+      margin: 5px 0;
+
       li {
         position: relative;
-        padding-left: 20px;
+        padding-left: 25px;
         &:before {
-          content: '▹';
+          content: '🚀';
           position: absolute;
           left: 0;
           color: ${({ theme }) => theme.highlight};
+          font-size: 14px;
         }
       }
     }

@@ -26,7 +26,7 @@ const Contact = () => {
   return (
     <StyledContact id="get-in-touch">
       <div>
-        <h3>What's next</h3>
+        <h3 className="mediumHeading">What's next</h3>
         <p>
           Thanks for stopping by and spending some time. I really appreciate it.
         </p>

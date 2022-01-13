@@ -1,18 +1,18 @@
-import { days } from "../config";
+import { days } from "./constants";
 export function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export function getDayInfo () {
+export function getDayInfo() {
   const day = new Date().getDay();
   const dayName = days[day];
   return {
     dayNum: day,
     dayName,
   };
-};
+}
 
 export function getDayText(dayNum = 0) {
   switch (dayNum) {
@@ -43,6 +43,7 @@ export function getDayText(dayNum = 0) {
         "Tantalizing",
         "Trailblazing",
         "Thrifty",
+        "Thunderous",
       ];
     }
     case 1:

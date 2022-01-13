@@ -75,6 +75,7 @@ const themes = {
     highlight: "red",
     bigHeading: "",
     smallHeading: "",
+    linkHover: 'blue',
     mixins,
   },
   dark: {
@@ -84,6 +85,7 @@ const themes = {
     highlight: "#64ffda",
     bigHeading: "",
     smallHeading: "",
+    linkHover: 'red',
     mixins,
   },
 };

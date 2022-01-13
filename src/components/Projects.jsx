@@ -10,6 +10,7 @@ const ProjectsList = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
+  margin: 20px 0;
   @media (max-width: 1024px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -24,7 +25,7 @@ const Box = styled.div`
   padding: 15px;
   min-height: 20%;
   gap: 20px;
-  border: 1px solid hotpink;
+  border: 1px solid ${({ theme }) => theme.highlight};
   width: 100%;
 
   .project-thumb {
@@ -80,7 +81,7 @@ const Projects = () => {
   const projects = data.projects.nodes;
   return (
     <ProjectsWrapper id="projects">
-      <h3>Projects</h3>
+      <h3 className="mediumHeading">Projects</h3>
       <p>
         At present not many, but still these are the projects that I have worked
         on. More to come soon 💪

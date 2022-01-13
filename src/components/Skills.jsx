@@ -80,7 +80,7 @@ const SkillBlock = styled.div`
 const Skills = () => {
   return (
     <SkillsSection id="skills">
-      <h3>Skills</h3>
+      <h3 className="mediumHeading">Skills</h3>
       <p>
         Reprehenderit officia do amet labore fugiat labore.Qui deserunt tempor
         amet labore consectetur culpa.

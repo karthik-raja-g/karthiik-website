@@ -40,7 +40,6 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* border-bottom: 1px solid white; */
 
   img {
     width: clamp(30px, 35px, 75px);
@@ -65,6 +64,8 @@ const ThemeSwitcher = styled.span`
   cursor: pointer;
   color: ${(props) => (props.isDarkTheme ? "yellow" : "black")};
   text-align: center;
+  font-size: var(--fz-xxl);
+  font-weight: 700;
   @media (max-width: 425px) {
     display: ${(props) => (props.open ? "block" : "none")};
   }
@@ -74,23 +75,16 @@ const MobileMenu = styled.div`
   height: 0px;
   transition: height 0.2s linear;
   box-shadow: 0 25px 36px -20px var(--navy-shadow);
-  svg,
-  ul {
-    display: none;
-    opacity: 0;
-  }
+  overflow-y: hidden;
+  display: none;
+
   @media (max-width: 425px) {
+    display: block;
     height: ${(props) => (props.open ? "200px" : "0")};
     position: fixed;
     width: 100%;
     top: var(--nav-height);
     background-color: ${({ theme }) => theme.body};
-
-    svg {
-      opacity: 1;
-      transition: opacity 0.2s linear;
-      display: inline-block;
-    }
 
     ul {
       display: flex;
@@ -101,12 +95,6 @@ const MobileMenu = styled.div`
       padding: 0;
       margin: 0;
       padding-top: 10px;
-      opacity: ${(props) => (props.open ? 1 : 0)};
-      transition: opacity 0.2s linear;
-
-      li {
-        /* border: 1px solid white; */
-      }
     }
   }
 `;
@@ -118,6 +106,7 @@ const Hamburger = styled(FontAwesomeIcon)`
     display: block;
   }
 `;
+
 const NavBar = () => {
   const { themeName, toggleTheme } = useTheme();
   const [open, setOpen] = useState(false);
@@ -126,7 +115,7 @@ const NavBar = () => {
   const handleThemeToggle = () => {
     setOpen(false);
     toggleTheme();
-  }
+  };
 
   return (
     <StyledHeader>
@@ -143,11 +132,15 @@ const NavBar = () => {
           isDarkTheme={isDarkTheme}
           title={`Switch to ${isDarkTheme ? "Light" : "Dark"} theme`}
         >
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             onClick={handleThemeToggle}
             icon={!isDarkTheme ? faMoon : faSun}
             className="theme-switch"
-          />
+          /> */}
+
+          <span onClick={handleThemeToggle} className="theme-switch">
+            {!isDarkTheme ? "🌒" : "🔅"}
+          </span>
         </ThemeSwitcher>
         <Hamburger icon={faBars} onClick={() => setOpen(!open)} />
       </Nav>
@@ -157,15 +150,18 @@ const NavBar = () => {
           title={`Switch to ${isDarkTheme ? "Light" : "Dark"} theme`}
           open={open}
         >
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             onClick={() => toggleTheme()}
             icon={!isDarkTheme ? faMoon : faSun}
             className="theme-switch"
-          />
+          /> */}
+          <span onClick={() => toggleTheme()} className="theme-switch">
+            {!isDarkTheme ? "🌒" : "🔅"}
+          </span>
         </ThemeSwitcher>
         <ul>
           {navLinks.map(({ name, url }, i) => (
-            <li key={i} onClick={handleThemeToggle}>
+            <li key={i} onClick={() => setOpen(!open)}>
               <Link to={url}>{name}</Link>
             </li>
           ))}

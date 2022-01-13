@@ -21,10 +21,12 @@ const Wrapper = styled.div`
   }
 
   @media (max-width: 425px) {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 0px;
-    padding-top: 50px;
+    padding-top: 50px; */
+    display: flex;
+    flex-direction: column-reverse;
   }
 `;
 
@@ -33,9 +35,10 @@ const Photo = styled.div`
   max-width: 300px;
 
   @media (max-width: 425px) {
-    margin: 50px auto 0;
+    margin: auto;
     width: 70%;
     grid-row: 2/3;
+    align-self: flex-start;
   }
 
   img {
