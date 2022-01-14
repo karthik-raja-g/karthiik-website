@@ -8,7 +8,11 @@ const Container = styled.div`
   padding-top: 100px;
   ${({ theme }) => theme.mixins.flexCenterCol};
   justify-content: space-evenly;
+  @media (max-width: 425px) {
+    padding-bottom: 50px;
+  }
 `;
+
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;

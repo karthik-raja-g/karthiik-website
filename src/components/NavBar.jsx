@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { navLinks } from "../config";
 import { Link } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSun, faMoon, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -53,6 +53,13 @@ const Nav = styled.nav`
     margin: 5px 0;
   }
 
+  .logo {
+      border-radius: 50%;
+    &.light {
+      background-color: #ffff;
+    }
+  }
+
   @media (max-width: 425px) {
     img {
       transform: scale(0.85) !important;
@@ -70,7 +77,7 @@ const ThemeSwitcher = styled.span`
   font-size: var(--fz-xxl);
   font-weight: 700;
   @media (max-width: 425px) {
-    display: ${(props) => (props.open ? "block" : "none")};
+    margin-right: 20px;
   }
 `;
 
@@ -83,7 +90,7 @@ const MobileMenu = styled.div`
 
   @media (max-width: 425px) {
     display: block;
-    height: ${(props) => (props.open ? "200px" : "0")};
+    height: ${(props) => (props.open ? "165px" : "0")};
     position: fixed;
     width: 100%;
     top: var(--nav-height);
@@ -115,15 +122,33 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
   const isDarkTheme = themeName === "dark";
 
-  const handleThemeToggle = () => {
-    setOpen(false);
-    toggleTheme();
-  };
-
   return (
     <StyledHeader>
       <Nav>
-        <StaticImage src="../images/icon.png" width={50} layout="constrained" alt="First letter K"/>
+        {isDarkTheme ? (
+          <StaticImage
+            src="../images/k-light.png"
+            width={100}
+            layout="constrained"
+            alt="First letter K"
+            className="logo light"
+          />
+        ) : (
+          <StaticImage
+            src="../images/k-dark.png"
+            width={100}
+            layout="constrained"
+            alt="First letter K"
+            className="logo"
+          />
+        )}
+        {/* <StaticImage
+          src="../images/letterK.jpg"
+          width={100}
+          layout="constrained"
+          alt="First letter K"
+          className="logo"
+        /> */}
         <ul>
           {navLinks.map(({ name, url }, i) => (
             <li key={i}>
@@ -135,37 +160,29 @@ const NavBar = () => {
           isDarkTheme={isDarkTheme}
           title={`Switch to ${isDarkTheme ? "Light" : "Dark"} theme`}
         >
-          {/* <FontAwesomeIcon
-            onClick={handleThemeToggle}
-            icon={!isDarkTheme ? faMoon : faSun}
+          <span
+            onClick={toggleTheme}
             className="theme-switch"
-          /> */}
-
-          <span onClick={handleThemeToggle} className="theme-switch">
+            role="button"
+            tabIndex="0"
+          >
             {!isDarkTheme ? "🌒" : "🔅"}
           </span>
         </ThemeSwitcher>
-        <Hamburger icon={faBars} onClick={() => setOpen(!open)}/>
+        <Hamburger
+          icon={faBars}
+          onClick={() => setOpen(!open)}
+          role="button"
+          tabIndex="0"
+        />
       </Nav>
       <MobileMenu open={open}>
-        <ThemeSwitcher
-          isDarkTheme={isDarkTheme}
-          title={`Switch to ${isDarkTheme ? "Light" : "Dark"} theme`}
-          open={open}
-        >
-          {/* <FontAwesomeIcon
-            onClick={() => toggleTheme()}
-            icon={!isDarkTheme ? faMoon : faSun}
-            className="theme-switch"
-          /> */}
-          <span onClick={() => toggleTheme()} className="theme-switch">
-            {!isDarkTheme ? "🌒" : "🔅"}
-          </span>
-        </ThemeSwitcher>
         <ul>
           {navLinks.map(({ name, url }, i) => (
-            <li key={i} onClick={() => setOpen(!open)}>
-              <Link to={url}>{name}</Link>
+            <li key={i}>
+              <Link to={url} onClick={() => setOpen(!open)}>
+                {name}
+              </Link>
             </li>
           ))}
         </ul>
