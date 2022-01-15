@@ -6,7 +6,8 @@ import { navLinks } from "../config";
 import { Link } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-
+import Sun from "../images/light.png";
+import Moon from "../images/dark.png";
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexCenter};
   position: fixed;
@@ -41,8 +42,10 @@ const Nav = styled.nav`
   align-items: center;
   justify-content: space-between;
 
-  img {
-    width: clamp(30px, 35px, 75px) !important;
+  .logo {
+    img {
+      width: clamp(30px, 35px, 75px) !important;
+    }
   }
   ul {
     display: flex;
@@ -54,15 +57,17 @@ const Nav = styled.nav`
   }
 
   .logo {
-      border-radius: 50%;
+    border-radius: 50%;
     &.light {
       background-color: #ffff;
     }
   }
 
   @media (max-width: 425px) {
-    img {
-      transform: scale(0.85) !important;
+    .logo {
+      img {
+        transform: scale(0.85) !important;
+      }
     }
     ul {
       display: none;
@@ -76,8 +81,15 @@ const ThemeSwitcher = styled.span`
   text-align: center;
   font-size: var(--fz-xxl);
   font-weight: 700;
+  width: 30px;
+  img {
+    width: 100%;
+    vertical-align: middle;
+    opacity: 0.8;
+  }
   @media (max-width: 425px) {
-    margin-right: 20px;
+    margin: 0 20px 0 0;
+    width: 20px;
   }
 `;
 
@@ -90,7 +102,7 @@ const MobileMenu = styled.div`
 
   @media (max-width: 425px) {
     display: block;
-    height: ${(props) => (props.open ? "165px" : "0")};
+    height: ${(props) => (props.open ? "155px" : "0")};
     position: fixed;
     width: 100%;
     top: var(--nav-height);
@@ -104,7 +116,6 @@ const MobileMenu = styled.div`
       list-style: none;
       padding: 0;
       margin: 0;
-      padding-top: 10px;
     }
   }
 `;
@@ -131,7 +142,7 @@ const NavBar = () => {
             width={100}
             layout="constrained"
             alt="First letter K"
-            // className="logo light"
+            className="logo"
           />
         ) : (
           <StaticImage
@@ -139,7 +150,7 @@ const NavBar = () => {
             width={100}
             layout="constrained"
             alt="First letter K"
-            // className="logo"
+            className="logo"
           />
         )}
         {/* <StaticImage
@@ -159,15 +170,12 @@ const NavBar = () => {
         <ThemeSwitcher
           isDarkTheme={isDarkTheme}
           title={`Switch to ${isDarkTheme ? "Light" : "Dark"} theme`}
+          onClick={toggleTheme}
+          role="button"
+          tabIndex="0"
         >
-          <span
-            onClick={toggleTheme}
-            className="theme-switch"
-            role="button"
-            tabIndex="0"
-          >
-            {!isDarkTheme ? "🌒" : "🔅"}
-          </span>
+          <img src={!isDarkTheme ? Moon : Sun} alt="Theme switcher" />
+          {/* {!isDarkTheme ? "🌒" : "🔅"} */}
         </ThemeSwitcher>
         <Hamburger
           icon={faBars}
