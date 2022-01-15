@@ -42,7 +42,7 @@ const Nav = styled.nav`
   justify-content: space-between;
 
   img {
-    width: clamp(30px, 35px, 75px);
+    width: clamp(30px, 35px, 75px) !important;
   }
   ul {
     display: flex;
@@ -127,19 +127,19 @@ const NavBar = () => {
       <Nav>
         {isDarkTheme ? (
           <StaticImage
-            src="../images/k-light.png"
+            src="../images/logo1.png"
             width={100}
             layout="constrained"
             alt="First letter K"
-            className="logo light"
+            // className="logo light"
           />
         ) : (
           <StaticImage
-            src="../images/k-dark.png"
+            src="../images/logo1.png"
             width={100}
             layout="constrained"
             alt="First letter K"
-            className="logo"
+            // className="logo"
           />
         )}
         {/* <StaticImage
