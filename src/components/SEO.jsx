@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
+import favicon from '../images/logo1.png'
 
 const SEO = ({ title }) => {
   const { site } = useStaticQuery(
@@ -25,6 +26,7 @@ const SEO = ({ title }) => {
     <Helmet title={seo.title}>
       <html lang="en" />
       <meta name="description" content={seo.description} />
+      <link rel="icon" href={favicon} />
       {/* <meta name="image" content={seo.image} />
 
       <meta property="og:title" content={seo.title} />

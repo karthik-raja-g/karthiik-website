@@ -76,7 +76,7 @@ const mixins = {
 const themes = {
   light: {
     body: "#fff",
-    text: "#33333",
+    text: "#333333",
     link: "darkorchid",
     highlight: "darkorchid",
     headginGradient: `linear-gradient(to right, darkblue, darkorchid)`,

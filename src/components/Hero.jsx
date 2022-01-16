@@ -25,7 +25,7 @@ const Wrapper = styled.div`
     gap: 25px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 900px) {
     /* grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 0px; */
@@ -47,7 +47,7 @@ const Photo = styled.div`
   }
 
   img {
-    border-radius: 8px;
+    border-radius: var(--border-radius)
   }
 `;
 
@@ -73,7 +73,8 @@ const Hero = () => {
         </Photo>
         <Intro className="intro">
           <h1 className="bigHeading">Hi, I'm Karthik</h1>
-          <h3 className="mediumHeading">I build things in the web.</h3>
+          <h3 className="mediumHeading">I build awesome user experience for the web.</h3>
+          <br/>
           <p>
             I'm a passionate web developer specialized in Frontend. I always
             look to learn things that excites me by building something. Just
@@ -83,8 +84,8 @@ const Hero = () => {
           <br />
           <p>
             As part of work, I use React for developing. It's always a fun
-            developing React apps. Apart from React, I've also worked with
-            Wordpress and Angular also.{" "}
+            developing React apps. Apart from that, I've also worked with
+            Wordpress and Angular.{" "}
           </p>
           <br/>
           <p><strong>PS:</strong> Blog page is under counstruction 🛠</p>

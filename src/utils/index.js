@@ -44,6 +44,11 @@ export function getDayText(dayNum = 0) {
         "Trailblazing",
         "Thrifty",
         "Thunderous",
+        "Therapeutic",
+        "Thriving",
+        "Tidy",
+        "Tranquil",
+        "Triumphant"
       ];
     }
     case 1:
@@ -60,7 +65,18 @@ export function getDayText(dayNum = 0) {
         "Mystic",
       ];
     case 3:
-      return ["Wonderful", "Wholesome", "Warm", "Whimsical", "Wondrous"];
+      return [
+        "Wonderful",
+        "Wholesome",
+        "Warm",
+        "Whimsical",
+        "Wondrous",
+        "Wanderlust",
+        "Wanderlust",
+        "Witty",
+        "Worthwhile",
+        "Wow",
+      ];
     case 5:
       return [
         "Fantastic",
