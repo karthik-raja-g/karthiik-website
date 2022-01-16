@@ -9,4 +9,4 @@ tech:
   - Styled components
 ---
 
-Wanted to learn styled components. Found this as a perfect challenge in [Frontend Mentor](https://www.frontendmentor.io/) to get my hands dirty.
+Wanted to learn styled components. [Frontend Mentor](https://www.frontendmentor.io/) had a perfect challenge in to get my hands dirty.

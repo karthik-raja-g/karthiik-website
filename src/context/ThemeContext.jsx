@@ -9,8 +9,10 @@ const useTheme = () => {
   return themeContext;
 };
 const AppThemeProvider = ({ children }) => {
-  const [themeName, setThemeName] = useState("dark");
-
+  // const [themeName, setThemeName] = useState(
+  //   new Date().getHours() < 18 ? "light" : "dark"
+  // );
+  const [themeName, setThemeName] = useState("dark")
   const toggleTheme = () => {
     if (themeName === "dark") {
       setThemeName("light");

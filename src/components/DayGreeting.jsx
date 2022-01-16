@@ -31,7 +31,7 @@ const DayGreeting = () => {
 
   useInterval(
     () => {
-      if (!dayInfo?.dayNum) return;
+      if (!dayInfo?.dayNum.toString()) return;
       const texts = getDayText(dayInfo.dayNum);
       setMessage(texts[getRandomInt(0, texts.length - 1)]);
     },

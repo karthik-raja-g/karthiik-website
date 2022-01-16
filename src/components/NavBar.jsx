@@ -132,8 +132,8 @@ const NavBar = () => {
   const { themeName, toggleTheme } = useTheme();
   const [open, setOpen] = useState(false);
   const isDarkTheme = themeName === "dark";
-
-  return (
+  console.log(themeName, 'tn')
+  return (  
     <StyledHeader>
       <Nav>
         {isDarkTheme ? (

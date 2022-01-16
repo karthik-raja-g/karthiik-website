@@ -7,6 +7,8 @@ export const days = [
   "Friday",
   "Saturday",
 ];
+
+// https://github.com/novellac/multilanguage-hello-json/blob/master/hello.json
 export const languages = [
   {
     language: "English",

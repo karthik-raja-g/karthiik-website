@@ -30,7 +30,7 @@ const Contact = () => {
         <p>
           Thanks for stopping by and spending some time. I really appreciate it.
         </p>
-        <p>Want to say "Hey" ?</p>
+        <p>Want to say "Hey"? Use any of the channels below</p>
         <a href="mailto:karthikajar555@gmail.com">karthikajar555@gmail.com</a>
         <div className="inline-links">
           <ExternalLink href="https://www.linkedin.com/in/karthiik/">

@@ -27,6 +27,20 @@ const Box = styled.div`
   gap: 20px;
   border: 1px solid ${({ theme }) => theme.highlight};
   width: 100%;
+  box-shadow: ${({ theme }) => theme.boxShadow};
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 0%;
+    bottom: 0;
+    transition: width 0.5s ease-in-out;
+    height: 4px;
+    background-color: ${({ theme }) => theme.highlight};
+  }
 
   .project-thumb {
     width: 100%;
@@ -46,6 +60,16 @@ const Box = styled.div`
 
     .image-link {
       display: none;
+    }
+  }
+
+  &:hover {
+    transition: transform 0.1s ease 0s;
+    transform: scale(1.02);
+    box-shadow: none;
+
+    &:after {
+      width: 100%;
     }
   }
 `;
@@ -108,7 +132,7 @@ const Projects = () => {
                 )}
                 <div className="inline-links">
                   {frontmatter.external && (
-                    <ExternalLink href={frontmatter.external}>
+                    <ExternalLink href={frontmatter.external} className="view-link">
                       view
                     </ExternalLink>
                   )}

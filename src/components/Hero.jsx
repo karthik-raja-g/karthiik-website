@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 import Welcome from "./Welcome";
+import ExternalLink from "./ExternalLink";
 
 const Container = styled.div`
   min-height: 100vh;
@@ -71,22 +72,22 @@ const Hero = () => {
           />
         </Photo>
         <Intro className="intro">
-          <h1 className="bigHeading">Hello There</h1>
+          <h1 className="bigHeading">Hi, I'm Karthik</h1>
+          <h3 className="mediumHeading">I build things in the web.</h3>
           <p>
-            Nulla mollit deserunt labore anim qui fugiat eiusmod exercitation.
-            Nulla mollit deserunt labore anim qui fugiat eiusmod exercitation
-            Nulla mollit deserunt labore anim qui fugiat eiusmod exercitation.
-            Nulla mollit deserunt labore anim qui fugiat eiusmod exercitation
+            I'm a passionate web developer specialized in Frontend. I always
+            look to learn things that excites me by building something. Just
+            like this site which I built using
+            <ExternalLink href="https://www.gatsbyjs.com">Gatsby</ExternalLink>
           </p>
+          <br />
           <p>
-            Nulla mollit deserunt labore anim qui fugiat eiusmod exercitation
+            As part of work, I use React for developing. It's always a fun
+            developing React apps. Apart from React, I've also worked with
+            Wordpress and Angular also.{" "}
           </p>
-          <p>
-            Nulla mollit deserunt labore anim qui fugiat eiusmod exercitation
-          </p>
-          <p>
-            Nulla mollit deserunt labore anim qui fugiat eiusmod exercitation
-          </p>
+          <br/>
+          <p><strong>PS:</strong> Blog page is under counstruction 🛠</p>
         </Intro>
       </Wrapper>
     </Container>

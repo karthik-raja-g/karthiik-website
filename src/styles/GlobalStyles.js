@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     --content: 16px;
     --bigHeading: 32px;
     --sectionHeading: 24px; 
-    --border-radius: 8px;
+    --border-radius: 2px;
     --nav-height: 70px;
     --nav-scroll-height: 70px;
     --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -51,8 +51,12 @@ const GlobalStyle = createGlobalStyle`
   width: 100%;
   padding: 0 150px;
 
-  @media (max-width: 1080px) {
+  /* @media (max-width: 2000px) {
     padding: 0 100px;
+  } */
+
+  @media (max-width: 1080px) {
+    padding: 0 75px;
   }
   @media (max-width: 768px) {
     padding: 0 50px;
@@ -83,9 +87,13 @@ const GlobalStyle = createGlobalStyle`
 
   .bigHeading {
     font-size: clamp(40px, 6vw, 80px);
+    line-height: 1.4;
+    ${({theme}) => theme.mixins.heading}
+
   }
   .mediumHeading {
     font-size: clamp(20px,5vw,30px);
+    ${({theme}) => theme.mixins.heading}
   }
 
   footer {
@@ -133,9 +141,11 @@ const GlobalStyle = createGlobalStyle`
     gap: 15px;
 
     a {
-      &:before {
+      &:not(.view-link) {
+        &:before {
         display: none;
-      } 
+        } 
+      }
     }
   }
 

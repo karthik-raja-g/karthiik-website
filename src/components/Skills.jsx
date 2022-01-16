@@ -80,11 +80,8 @@ const SkillBlock = styled.div`
 const Skills = () => {
   return (
     <SkillsSection id="skills">
-      <h3 className="mediumHeading">Skills</h3>
-      <p>
-        Reprehenderit officia do amet labore fugiat labore.Qui deserunt tempor
-        amet labore consectetur culpa.
-      </p>
+      <h3 className="mediumHeading">My tool kit</h3>
+      <p>The tools I use to bring ideas to screen and give them life.</p>
       <StyledGrid>
         {skills.map((sk) => (
           <SkillBlock key={sk.name}>

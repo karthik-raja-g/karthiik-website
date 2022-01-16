@@ -1,9 +1,19 @@
 import React from "react";
+import styled from "styled-components";
 
-const ExternalLink = ({ href, className = '', children }) => (
-  <a href={href} target="_blank" referrerPolicy="no-referrer" className={className} rel="noopener noreferrer">
+const Link = styled.a`
+  margin: 0 5px;
+`;
+const ExternalLink = ({ href, className = "", children }) => (
+  <Link
+    href={href}
+    target="_blank"
+    referrerPolicy="no-referrer"
+    className={className}
+    rel="noopener noreferrer"
+  >
     {children}
-  </a>
+  </Link>
 );
 
 export default ExternalLink;

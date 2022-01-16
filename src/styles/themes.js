@@ -66,16 +66,22 @@ const mixins = {
       opacity: 0.5;
     }
   `,
+  heading: css`
+    background-image: ${({theme}) => theme.headginGradient};
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  `
 };
 const themes = {
   light: {
     body: "#fff",
-    text: "#0a192f",
-    link: "red",
-    highlight: "red",
-    bigHeading: "",
-    smallHeading: "",
-    linkHover: 'blue',
+    text: "#33333",
+    link: "darkorchid",
+    highlight: "darkorchid",
+    headginGradient: `linear-gradient(to right, darkblue, darkorchid)`,
+    linkHover: '#333333',
+    boxShadow: 'rgb(210 210 249) 4px 4px 0px 0px',
     mixins,
   },
   dark: {
@@ -83,11 +89,10 @@ const themes = {
     text: "#fff",
     link: "#64ffda",
     highlight: "#64ffda",
-    bigHeading: "",
-    smallHeading: "",
-    linkHover: 'red',
+    headginGradient: `linear-gradient(60deg, #64ffda, #F8EBFF)`,
+    linkHover: '#fff',
+    boxShadow: '#38445D 4px 4px 0px 0px',
     mixins,
   },
 };
-
 export default themes;
