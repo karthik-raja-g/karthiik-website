@@ -22,13 +22,21 @@ const SEO = ({ title }) => {
       }
     `
   );
+  const {
+    title: siteTitle,
+    description,
+    url: siteUrl,
+    image,
+    twitterCard,
+    twitterUsername
+  } = site.siteMetadata;
   const seo = {
-    title: title || site.siteMetadata.title,
-    description: site.siteMetadata.description,
-    url: site.siteMetadata.url,
-    image: site.siteMetadata.image,
-    twitterCard: site.siteMetadata.twitterCard,
-    twitterUsername: site.siteMetadata.twitterUsername,
+    title: title || siteTitle,
+    description: description,
+    url: siteUrl,
+    image,
+    twitterCard: `${siteUrl}${twitterCard}`,
+    twitterUsername
   };
   return (
     <Helmet title={seo.title}>
@@ -47,7 +55,7 @@ const SEO = ({ title }) => {
       <meta name="twitter:creator" content={seo.twitterUsername} />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content={seo.image} />
+      <meta name="twitter:image" content={seo.twitterCard} />
     </Helmet>
   );
 };
