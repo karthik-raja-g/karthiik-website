@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { StaticImage } from "gatsby-plugin-image";
 import Dicovery from "../images/discovery.png"
 import ExternalLink from "./ExternalLink";
 

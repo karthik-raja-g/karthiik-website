@@ -73,7 +73,7 @@ const Hero = () => {
         </Photo>
         <Intro className="intro">
           <h1 className="bigHeading">Hi, I'm Karthik</h1>
-          <h3 className="mediumHeading">I build awesome user experience for the web.</h3>
+          <h3 className="mediumHeading">I build awesome user experiences for the web.</h3>
           <br/>
           <p>
             I'm a passionate web developer specialized in Frontend. I always

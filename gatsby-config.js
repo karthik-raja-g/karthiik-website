@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "Karthik - Frontend developer",
@@ -5,6 +9,9 @@ module.exports = {
     author: "Karthik raja",
     contact: "karthikajar555@gmail.com",
     url: "https://www.karthiik.com",
+    image: "/logo5x.png",
+    twitterCard: "/twitterCard.png",
+    twitterUsername: "i_edoc"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -39,6 +46,12 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.TRACKER_CODE,
       },
     },
   ],
