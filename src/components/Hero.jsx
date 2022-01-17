@@ -63,7 +63,7 @@ const Hero = () => {
       <Wrapper>
         <Photo>
           <StaticImage
-            src="../images/profile.jpg"
+            src="../images/profile.png"
             alt="Profile image"
             placeholder="blurred"
             height={500}

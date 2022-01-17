@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: "Karthik - Frontend developer",
-    description: "My personal website",
+    description: "I'm Karthik, I build awesome user experiences for the web",
     author: "Karthik raja",
     contact: "karthikajar555@gmail.com",
+    url: "https://www.karthiik.com",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
