@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin, faMedium } from "@fortawesome/free-brands-svg-icons";
 import Dicovery from "../images/discovery.png"
 import ExternalLink from "./ExternalLink";
 
@@ -37,6 +37,9 @@ const Contact = () => {
           </ExternalLink>
           <ExternalLink href="https://github.com/karthik-raja-g">
             <FontAwesomeIcon icon={faGithub} className="brand-logo" />
+          </ExternalLink>
+          <ExternalLink href="https://karthikraja555.medium.com">
+            <FontAwesomeIcon icon={faMedium} className="brand-logo" />
           </ExternalLink>
         </div>
       </div>

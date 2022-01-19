@@ -132,33 +132,16 @@ const NavBar = () => {
   const { themeName, toggleTheme } = useTheme();
   const [open, setOpen] = useState(false);
   const isDarkTheme = themeName === "dark";
-  return (  
+  return (
     <StyledHeader>
       <Nav>
-        {isDarkTheme ? (
-          <StaticImage
-            src="../images/logo1.png"
-            width={100}
-            layout="constrained"
-            alt="First letter K"
-            className="logo"
-          />
-        ) : (
-          <StaticImage
-            src="../images/logo1.png"
-            width={100}
-            layout="constrained"
-            alt="First letter K"
-            className="logo"
-          />
-        )}
-        {/* <StaticImage
-          src="../images/letterK.jpg"
+        <StaticImage
+          src="../images/logo1.png"
           width={100}
           layout="constrained"
           alt="First letter K"
           className="logo"
-        /> */}
+        />
         <ul>
           {navLinks.map(({ name, url }, i) => (
             <li key={i}>
@@ -170,7 +153,7 @@ const NavBar = () => {
           isDarkTheme={isDarkTheme}
           title={`Switch to ${isDarkTheme ? "Light" : "Dark"} theme`}
           onClick={toggleTheme}
-          role="button"
+          // role="button"
           tabIndex="0"
         >
           <img src={!isDarkTheme ? Moon : Sun} alt="Theme switcher" />
@@ -179,7 +162,7 @@ const NavBar = () => {
         <Hamburger
           icon={faBars}
           onClick={() => setOpen(!open)}
-          role="button"
+          // role="button"
           tabIndex="0"
         />
       </Nav>

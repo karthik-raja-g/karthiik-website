@@ -47,7 +47,7 @@ const Photo = styled.div`
   }
 
   img {
-    border-radius: var(--border-radius)
+    border-radius: var(--border-radius);
   }
 `;
 
@@ -73,12 +73,14 @@ const Hero = () => {
         </Photo>
         <Intro className="intro">
           <h1 className="bigHeading">Hi, I'm Karthik</h1>
-          <h3 className="mediumHeading">I build awesome user experiences for the web.</h3>
-          <br/>
+          <h3 className="mediumHeading">
+            I build awesome user experiences for the web.
+          </h3>
+          <br />
           <p>
-            I'm a passionate web developer specialized in Frontend. I always
-            look to learn things that excites me by building something. Just
-            like this site which I built using
+            I'm an aspiring Full stack developer, currently working on frontend
+            and learning backend. I always look to learn things that excites me
+            by building something. Just like this site which I built using
             <ExternalLink href="https://www.gatsbyjs.com">Gatsby</ExternalLink>
           </p>
           <br />
@@ -87,8 +89,10 @@ const Hero = () => {
             developing React apps. Apart from that, I've also worked with
             Wordpress and Angular.{" "}
           </p>
-          <br/>
-          <p><strong>PS:</strong> Blog page is under counstruction 🛠</p>
+          <br />
+          {/* <p>
+            <strong>PS:</strong> Blog page is under counstruction 🛠
+          </p> */}
         </Intro>
       </Wrapper>
     </Container>

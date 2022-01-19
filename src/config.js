@@ -10,6 +10,10 @@ module.exports = {
       url: "https://github.com/karthik-raja-g",
       name: "Github",
     },
+    medium: {
+      url: "https://karthikraja555.medium.com",
+      name: "Medium"
+    }
   },
 
   navLinks: [

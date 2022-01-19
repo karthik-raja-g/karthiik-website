@@ -76,6 +76,7 @@ export function getDayText(dayNum = 0) {
         "Witty",
         "Worthwhile",
         "Wow",
+        "Whoopee",
       ];
     case 5:
       return [

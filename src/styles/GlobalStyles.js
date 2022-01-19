@@ -86,7 +86,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .bigHeading {
-    font-size: clamp(40px, 6vw, 60px);
+    font-size: clamp(40px, 6vw, 54px);
     line-height: 1.4;
     ${({theme}) => theme.mixins.heading}
 

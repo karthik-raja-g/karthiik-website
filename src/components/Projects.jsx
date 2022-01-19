@@ -108,10 +108,6 @@ const Projects = () => {
   return (
     <ProjectsWrapper id="projects">
       <h3 className="mediumHeading">Projects</h3>
-      <p>
-        At present not many, but still these are the projects that I have worked
-        on. More to come soon 💪
-      </p>
       <ProjectsList>
         {projects.map(({ node: { frontmatter, html } }, i) => {
           const image = getImage(frontmatter.cover.childrenImageSharp[0]);
