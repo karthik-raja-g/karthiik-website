@@ -31,7 +31,7 @@ const Box = styled.div`
   position: relative;
 
   &:after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     left: 0;
@@ -84,6 +84,7 @@ const Projects = () => {
     query {
       projects: allMarkdownRemark(
         sort: { fields: frontmatter___date, order: ASC }
+        filter: { frontmatter: { hide: { eq: false } } }
       ) {
         edges {
           node {
@@ -114,7 +115,11 @@ const Projects = () => {
           return (
             <Box key={i}>
               <ExternalLink href={frontmatter.external} className="image-link">
-                <GatsbyImage image={image} className="project-thumb" alt={frontmatter.title} />
+                <GatsbyImage
+                  image={image}
+                  className="project-thumb"
+                  alt={frontmatter.title}
+                />
               </ExternalLink>
               <Details>
                 <h4>{frontmatter.title}</h4>
@@ -128,7 +133,10 @@ const Projects = () => {
                 )}
                 <div className="inline-links">
                   {frontmatter.external && (
-                    <ExternalLink href={frontmatter.external} className="view-link">
+                    <ExternalLink
+                      href={frontmatter.external}
+                      className="view-link"
+                    >
                       view
                     </ExternalLink>
                   )}

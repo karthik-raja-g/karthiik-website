@@ -3,6 +3,7 @@ date: '1'
 title: 'Google search previewer '
 cover: './googlePreview.jpg'
 external: 'https://chrome.google.com/webstore/detail/search-result-previewer/hohiagapgmecaoofekehpolmngnfggnn'
+hide: false
 tech:
  - HTML
  - CSS

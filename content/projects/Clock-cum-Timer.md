@@ -4,6 +4,7 @@ title: 'Clock and Timer'
 cover: './countdown.png'
 github: 'https://github.com/karthik-raja-g/launch-countdown'
 external: 'https://launch-countdown-sepia.vercel.app/'
+hide: true
 tech:
  - React
 ---

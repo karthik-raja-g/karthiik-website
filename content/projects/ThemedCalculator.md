@@ -4,6 +4,7 @@ title: 'Themed calculator'
 cover: './calculator.png'
 github: 'https://github.com/karthik-raja-g/themed-calculator'
 external: 'https://themed-calculator.vercel.app/'
+hide: false
 tech:
   - React
   - Styled components
