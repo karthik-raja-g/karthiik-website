@@ -47,7 +47,9 @@ const Photo = styled.div`
   }
 
   img {
+    /* border-radius: 0 var(--border-radius) 0 var(--border-radius); */
     border-radius: var(--border-radius);
+    border: 2px solid ${({ theme }) => theme.highlight};
   }
 `;
 
@@ -63,7 +65,7 @@ const Hero = () => {
       <Wrapper>
         <Photo>
           <StaticImage
-            src="../images/profile.png"
+            src="../images/profile_1.jpg"
             alt="Profile image"
             placeholder="blurred"
             height={500}
